@@ -6,6 +6,7 @@ import React from "react";
 import CreditOverview from "../Cards/CreditOverview";
 import ExpensesOverview from "../Cards/ExpensesOverview";
 import MonthlyExpenses from "../Cards/MonthlyExpenses";
+import PaymentDays from "../Cards/PaymentDays";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -64,7 +65,7 @@ const MainContent = () => {
               gridRowEnd: "span 2",
             }}
           >
-            <MonthlyExpenses />
+            <PaymentDays />
           </div>
           <div
             style={{
