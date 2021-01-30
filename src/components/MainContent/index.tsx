@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
     gridContainer: {
       display: "grid",
       gridTemplateColumns: "repeat(4, 1fr)",
-      gridTemplateRows: "repeat(5, 1fr)",
+      gridTemplateRows: "repeat(5, 200px)",
       columnGap: 10,
       rowGap: 10,
     },
