@@ -11,7 +11,7 @@ const data = [
 
 function PaymentDays() {
   return (
-    <Paper style={{ height: "100%", position: "relative" }}>
+    <Paper style={{ height: "100%", position: "relative", overflow: "hidden" }}>
       <div>
         <Typography align='center' color='textSecondary' variant='h6'>
           Média de dias para pagamento
