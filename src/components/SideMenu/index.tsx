@@ -1,25 +1,34 @@
 import React from "react";
+
 import {
+  makeStyles,
+  useTheme,
+  Theme,
+  createStyles,
+} from "@material-ui/core/styles";
+import {
+  CssBaseline,
+  Divider,
   Drawer,
+  Hidden,
   List,
   ListItem,
-  ListItemText,
   ListItemIcon,
-  Divider,
+  ListItemText,
 } from "@material-ui/core";
+import { AttachMoney, Home } from "@material-ui/icons";
 
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-
-const drawerSize = 240;
+const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    // necessary for content to be below app bar
+    toolbar: theme.mixins.toolbar,
     drawer: {
-      width: drawerSize,
-      flexShrink: 0,
-      whiteSpace: "nowrap",
+      width: drawerWidth,
+    },
+    drawerPaper: {
+      width: drawerWidth,
     },
   })
 );
@@ -27,36 +36,32 @@ const useStyles = makeStyles((theme: Theme) =>
 const SideMenu = () => {
   const classes = useStyles();
 
-  return (
+  const drawer = (
     <div>
-      <Drawer
-        variant='permanent'
-        className={classes.drawer}
-        classes={{ paper: classes.drawer }}
-      >
-        <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={index}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {["All Mail", "Thrash", "Spam"].map((text, index) => (
-            <ListItem button key={index}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
+      <List>
+        <ListItem button>
+          <ListItemIcon>
+            <Home />
+          </ListItemIcon>
+          <ListItemText primary='Página inicial' />
+        </ListItem>
+        <ListItem button>
+          <ListItemIcon>
+            <AttachMoney />
+          </ListItemIcon>
+          <ListItemText primary='Contas a pagar' />
+        </ListItem>
+      </List>
     </div>
+  );
+  return (
+    <nav className={classes.drawer}>
+      <Hidden xsDown implementation='css'>
+        <Drawer variant='permanent' classes={{ paper: classes.drawerPaper }}>
+          {drawer}
+        </Drawer>
+      </Hidden>
+    </nav>
   );
 };
 

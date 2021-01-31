@@ -11,17 +11,21 @@ import PaymentDays from "../Cards/PaymentDays";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    topbar: {
+    topbar: { ...theme.mixins.toolbar },
+    box: {
       marginLeft: 240,
-      width: `calc(100% - ${240}px)`,
-      height: "100vh",
+      marginTop: 64,
+      width: `calc(100% - 240px)`,
+      height: `calc(100vh - 64px)`,
+      backgroundColor: theme.palette.background.default,
     },
     gridContainer: {
       display: "grid",
       gridTemplateColumns: "repeat(4, 1fr)",
       gridTemplateRows: "repeat(5, 1fr)",
-      height: "100%",
       columnGap: 10,
+      width: "100%",
+      height: "100%",
       rowGap: 10,
       padding: 10,
     },
@@ -30,56 +34,54 @@ const useStyles = makeStyles((theme: Theme) =>
 const MainContent = () => {
   const classes = useStyles();
   return (
-    <div>
-      <Box className={classes.topbar}>
-        <div className={classes.gridContainer}>
-          <div>
-            <MonthlyExpenses />
-          </div>
-          <div>
-            <MonthlyExpenses />
-          </div>
-          <div>
-            <MonthlyExpenses />
-          </div>
-          <div>
-            <MonthlyExpenses />
-          </div>
-          <div
-            style={{
-              gridColumnEnd: "span 2",
-              gridRowEnd: "span 2",
-            }}
-          >
-            <ExpensesOverview />
-          </div>
-          <div
-            style={{
-              gridColumnEnd: "span 2",
-              gridRowEnd: "span 2",
-            }}
-          >
-            <CreditOverview />
-          </div>
-          <div
-            style={{
-              gridColumnEnd: "span 2",
-              gridRowEnd: "span 2",
-            }}
-          >
-            <PaymentDays />
-          </div>
-          <div
-            style={{
-              gridColumnEnd: "span 2",
-              gridRowEnd: "span 2",
-            }}
-          >
-            <ExpensesAge />
-          </div>
+    <Box className={classes.box}>
+      <div className={classes.gridContainer}>
+        <div>
+          <MonthlyExpenses />
         </div>
-      </Box>
-    </div>
+        <div>
+          <MonthlyExpenses />
+        </div>
+        <div>
+          <MonthlyExpenses />
+        </div>
+        <div>
+          <MonthlyExpenses />
+        </div>
+        <div
+          style={{
+            gridColumnEnd: "span 2",
+            gridRowEnd: "span 2",
+          }}
+        >
+          <ExpensesOverview />
+        </div>
+        <div
+          style={{
+            gridColumnEnd: "span 2",
+            gridRowEnd: "span 2",
+          }}
+        >
+          <CreditOverview />
+        </div>
+        <div
+          style={{
+            gridColumnEnd: "span 2",
+            gridRowEnd: "span 2",
+          }}
+        >
+          <PaymentDays />
+        </div>
+        <div
+          style={{
+            gridColumnEnd: "span 2",
+            gridRowEnd: "span 2",
+          }}
+        >
+          <ExpensesAge />
+        </div>
+      </div>
+    </Box>
   );
 };
 
