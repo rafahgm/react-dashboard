@@ -11,7 +11,10 @@ const data = [
 
 function PaymentDays() {
   return (
-    <Paper style={{ height: "100%", position: "relative", overflow: "hidden" }}>
+    <Paper
+      style={{ height: "100%", position: "relative", overflow: "hidden" }}
+      elevation={3}
+    >
       <div>
         <Typography align='center' color='textSecondary' variant='h6'>
           Média de dias para pagamento
@@ -50,7 +53,7 @@ function PaymentDays() {
               fill='#913913'
               startAngle={180}
               endAngle={0}
-              innerRadius={100}
+              innerRadius='60%'
             />
           </PieChart>
         </ResponsiveContainer>
