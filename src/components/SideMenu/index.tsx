@@ -1,14 +1,7 @@
 import React from "react";
 
+import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
 import {
-  makeStyles,
-  useTheme,
-  Theme,
-  createStyles,
-} from "@material-ui/core/styles";
-import {
-  CssBaseline,
-  Divider,
   Drawer,
   Hidden,
   List,

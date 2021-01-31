@@ -1,6 +1,7 @@
-import { Paper, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import React from "react";
 import { PieChart, Pie, ResponsiveContainer } from "recharts";
+import BaseCard from "../BaseCard";
 
 const data = [
   { name: "a", value: 25 },
@@ -11,14 +12,11 @@ const data = [
 
 function PaymentDays() {
   return (
-    <Paper
+    <BaseCard
       style={{
-        height: "100%",
         position: "relative",
-        overflow: "hidden",
-        minHeight: "200px",
       }}
-      elevation={3}
+      minHeight='200px'
     >
       <div>
         <Typography align='center' color='textSecondary' variant='h6'>
@@ -63,7 +61,7 @@ function PaymentDays() {
           </PieChart>
         </ResponsiveContainer>
       </div>
-    </Paper>
+    </BaseCard>
   );
 }
 

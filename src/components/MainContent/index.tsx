@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
       [theme.breakpoints.down("sm")]: {
         height: "100%",
       },
-      backgroundColor: theme.palette.background.default,
+      backgroundColor: theme.palette.grey[300],
     },
     gridContainer: {
       display: "grid",
@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   })
 );
+
 const MainContent = () => {
   const classes = useStyles();
   return (

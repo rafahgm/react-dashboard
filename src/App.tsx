@@ -6,7 +6,6 @@ import {
 import React from "react";
 import MainContent from "./components/MainContent";
 import SideMenu from "./components/SideMenu";
-import { orange } from "@material-ui/core/colors";
 import TopBar from "./components/TopBar";
 
 let theme = createMuiTheme();

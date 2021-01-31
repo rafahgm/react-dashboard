@@ -1,7 +1,8 @@
 import React from "react";
 
-import { Paper, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import { LineChart, Line, ResponsiveContainer } from "recharts";
+import BaseCard from "../BaseCard";
 
 const MonthlyExpenses = () => {
   const data = [
@@ -11,15 +12,7 @@ const MonthlyExpenses = () => {
     { month: "Abr", value: 250 },
   ];
   return (
-    <Paper
-      style={{
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        minHeight: "100px",
-      }}
-      elevation={3}
-    >
+    <BaseCard minHeight='100px'>
       <div
         style={{
           display: "flex",
@@ -42,7 +35,7 @@ const MonthlyExpenses = () => {
           </LineChart>
         </ResponsiveContainer>
       </div>
-    </Paper>
+    </BaseCard>
   );
 };
 

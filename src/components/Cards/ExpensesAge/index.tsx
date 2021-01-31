@@ -1,6 +1,7 @@
-import { Paper, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import React from "react";
 import { ResponsiveContainer, BarChart, XAxis, YAxis, Bar } from "recharts";
+import BaseCard from "../BaseCard";
 
 const data = [
   { name: "1-30 Dias", value: 50 },
@@ -26,16 +27,7 @@ const CustomizedLabel = (props: any) => {
 
 const ExpensesAge = () => {
   return (
-    <Paper
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        height: "100%",
-        minHeight: "200px",
-      }}
-      elevation={3}
-    >
+    <BaseCard minHeight='200px'>
       <div
         style={{
           flexBasis: "10%",
@@ -71,7 +63,7 @@ const ExpensesAge = () => {
           </BarChart>
         </ResponsiveContainer>
       </div>
-    </Paper>
+    </BaseCard>
   );
 };
 

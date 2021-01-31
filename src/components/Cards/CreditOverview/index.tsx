@@ -1,23 +1,9 @@
 import React from "react";
 
-import { Paper, Typography } from "@material-ui/core";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import { Typography } from "@material-ui/core";
 import { ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import purple from "@material-ui/core/colors/purple";
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    paper: {
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      height: "100%",
-      padding: 10,
-      minHeight: "200px",
-    },
-    title: {},
-  })
-);
+import BaseCard from "../BaseCard";
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
@@ -48,14 +34,13 @@ const CustomLabel = (props: any) => {
 };
 
 const CreditOverview = () => {
-  const classes = useStyles();
   const data = [
     { name: "Faturas Vencidas", value: 2 },
     { name: "Faturas em aberto", value: 28 },
     { name: "Faturas Pagas", value: 70 },
   ];
   return (
-    <Paper className={classes.paper} elevation={3}>
+    <BaseCard minHeight='200px'>
       <div
         style={{
           flexBasis: "10%",
@@ -87,7 +72,7 @@ const CreditOverview = () => {
           </PieChart>
         </ResponsiveContainer>
       </div>
-    </Paper>
+    </BaseCard>
   );
 };
 
