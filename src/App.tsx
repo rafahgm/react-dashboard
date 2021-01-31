@@ -1,13 +1,19 @@
+import { createMuiTheme, ThemeProvider } from "@material-ui/core";
 import React from "react";
 import MainContent from "./components/MainContent";
 import SideMenu from "./components/SideMenu";
+import { orange } from "@material-ui/core/colors";
+import TopBar from "./components/TopBar";
+
+const theme = createMuiTheme({});
 
 function App() {
   return (
-    <div className='App'>
+    <ThemeProvider theme={theme}>
+      <TopBar />
       <SideMenu />
       <MainContent />
-    </div>
+    </ThemeProvider>
   );
 }
 
