@@ -39,6 +39,7 @@ const ExpensesOverview = () => {
         flexDirection: "column",
         justifyContent: "center",
         height: "100%",
+        minHeight: "200px",
       }}
       elevation={3}
     >
@@ -60,7 +61,7 @@ const ExpensesOverview = () => {
         }}
       >
         <ResponsiveContainer>
-          <BarChart data={data} barCategoryGap={50}>
+          <BarChart data={data} barCategoryGap='20%'>
             <CartesianGrid strokeDasharray='3 3' />
             <XAxis
               style={{

@@ -13,16 +13,26 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     topbar: { ...theme.mixins.toolbar },
     box: {
-      marginLeft: 240,
       marginTop: 64,
-      width: `calc(100% - 240px)`,
+      [theme.breakpoints.up("lg")]: {
+        marginLeft: 240,
+        width: `calc(100% - 240px)`,
+      },
+
       height: `calc(100vh - 64px)`,
+      [theme.breakpoints.down("sm")]: {
+        height: "100%",
+      },
       backgroundColor: theme.palette.background.default,
     },
     gridContainer: {
       display: "grid",
       gridTemplateColumns: "repeat(4, 1fr)",
       gridTemplateRows: "repeat(5, 1fr)",
+      [theme.breakpoints.down("sm")]: {
+        gridTemplateColumns: "repeat(2, 1fr)",
+        // gridTemplateRows: "repeat(5, 1fr)",
+      },
       columnGap: 10,
       width: "100%",
       height: "100%",

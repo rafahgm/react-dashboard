@@ -56,7 +56,7 @@ const SideMenu = () => {
   );
   return (
     <nav className={classes.drawer}>
-      <Hidden xsDown implementation='css'>
+      <Hidden mdDown implementation='css'>
         <Drawer variant='permanent' classes={{ paper: classes.drawerPaper }}>
           {drawer}
         </Drawer>

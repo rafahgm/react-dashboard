@@ -7,8 +7,10 @@ const drawerSize = 240;
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     topbar: {
-      marginLeft: drawerSize,
-      width: `calc(100% - ${drawerSize}px)`,
+      [theme.breakpoints.up("lg")]: {
+        marginLeft: drawerSize,
+        width: `calc(100% - ${drawerSize}px)`,
+      },
     },
   })
 );

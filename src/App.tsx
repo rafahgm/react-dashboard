@@ -1,11 +1,17 @@
-import { createMuiTheme, ThemeProvider } from "@material-ui/core";
+import {
+  createMuiTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+} from "@material-ui/core";
 import React from "react";
 import MainContent from "./components/MainContent";
 import SideMenu from "./components/SideMenu";
 import { orange } from "@material-ui/core/colors";
 import TopBar from "./components/TopBar";
 
-const theme = createMuiTheme({});
+let theme = createMuiTheme();
+
+theme = responsiveFontSizes(theme);
 
 function App() {
   return (

@@ -32,6 +32,7 @@ const ExpensesAge = () => {
         flexDirection: "column",
         justifyContent: "center",
         height: "100%",
+        minHeight: "200px",
       }}
       elevation={3}
     >

@@ -12,7 +12,12 @@ const data = [
 function PaymentDays() {
   return (
     <Paper
-      style={{ height: "100%", position: "relative", overflow: "hidden" }}
+      style={{
+        height: "100%",
+        position: "relative",
+        overflow: "hidden",
+        minHeight: "200px",
+      }}
       elevation={3}
     >
       <div>

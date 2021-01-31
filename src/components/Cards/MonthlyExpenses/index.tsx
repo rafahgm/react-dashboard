@@ -12,7 +12,12 @@ const MonthlyExpenses = () => {
   ];
   return (
     <Paper
-      style={{ height: "100%", display: "flex", flexDirection: "column" }}
+      style={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100px",
+      }}
       elevation={3}
     >
       <div
