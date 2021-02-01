@@ -3,11 +3,11 @@ import { Theme } from "@material-ui/core/styles";
 import { createStyles } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 import React from "react";
-import CreditOverview from "../Cards/CreditOverview";
-import ExpensesAge from "../Cards/ExpensesAge";
-import ExpensesOverview from "../Cards/ExpensesOverview";
-import MonthlyExpenses from "../Cards/MonthlyExpenses";
-import PaymentDays from "../Cards/PaymentDays";
+import CreditOverview from "../../components/Cards/CreditOverview";
+import ExpensesAge from "../../components/Cards/ExpensesAge";
+import ExpensesOverview from "../../components/Cards/ExpensesOverview";
+import MonthlyExpenses from "../../components/Cards/MonthlyExpenses";
+import PaymentDays from "../../components/Cards/PaymentDays";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const MainContent = () => {
+const Expenses = () => {
   const classes = useStyles();
   return (
     <Box className={classes.box}>
@@ -96,4 +96,4 @@ const MainContent = () => {
   );
 };
 
-export default MainContent;
+export default Expenses;
